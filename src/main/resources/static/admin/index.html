@@ -1,0 +1,111 @@
+<html ng-app="revo">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="images/simple-smile.png" />
+
+    <link rel='stylesheet' href='../css/dashicons.min4189.css' type='text/css'
+            />
+    <link href='../css/style.css'
+          rel='stylesheet' type='text/css'/>
+    <script type='application/javascript' src='../js/jquery4a80.js'></script>
+    <script type='application/javascript' src='../js/angular.min.js'></script>
+    <script type='application/javascript' src='app/index.js'></script>
+
+</head>
+
+<body class="home blog" ng-controller="postCtrl">
+<div id="page" class="hfeed site">
+    <header id="masthead" class="site-header">
+        <div class="header-item">
+            <div class="site-branding">
+                <div class="site-logo">
+                    <a href="../index.html" itemprop="url" rel="home">
+                        <img class="logo" src="../images/logo2.png"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav id="primary-navigation" class="main-navigation">
+        <div class="navigation-item">
+            <ul id="menu-primary-items" class="menu-primary-items sf-menu">
+
+                <li>
+                    <a href="">Home</a>
+                </li>
+                <li>
+                    <a href="create.html">Create</a>
+                </li>
+                <li>
+                    <a href="">More..</a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="">JUnit</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <a href="#primary-navigation" class="mobile-menu">
+        <div class="dashicons dashicons-menu"></div>
+    </a>
+
+    <div id="content" class="site-content" style="width: 70%">
+        <div id="primary" class="content-area">
+            <main id="main" class="site-main">
+
+                <table>
+                    <thead>
+                    <td>id</td>
+                    <td>title</td>
+                    <td>date</td>
+                    <td>description</td>
+                    <td>image</td>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="p in post">
+                        <td><a href="edit.html?post={{p.id}}">edit {{p.id}}</a> </td>
+                        <td>{{p.title}}</td>
+                        <td>{{p.date}}</td>
+                        <td>{{p.description}}</td>
+                        <td style="width: 200px;height: 130px"><img width="200" height="130" ng-src="../images/{{p.postImg}}"
+                                 class="post-thumbnail wp-post-image"/></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+
+
+
+                <nav class="pagination loop-pagination">
+                    <a class="prev page-numbers" href="index.html?page={{pagesNumFirst}}">&larr; Prev </a>
+                    <a ng-repeat="page in pagesNum" class='page-numbers {{(page.currentpage==true)?"current":""}}' href='index.html?page={{page.num}}'>{{page.num}}</a>
+                    <a class="next page-numbers" href="index.html?page={{pagesNumLast}}">Next &rarr;</a>
+                </nav>
+
+
+
+
+            </main>
+        </div>
+     </div>
+    <footer id="colophon" class="site-footer">
+        <div class="footer-item">
+
+            <div class="site-info">
+                <a href="">Privacy Policy</a>
+                <br>
+                {{location}}, Copyright © 2015
+            </div>
+        </div>
+    </footer>
+</div>
+<script type='text/javascript' src='../js/delivery.min.js'></script>
+</body>
+</html>

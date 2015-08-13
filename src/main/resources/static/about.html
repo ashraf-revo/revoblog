@@ -1,0 +1,97 @@
+<html ng-app="revo">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="images/simple-smile.png" />
+    <link rel='stylesheet' href='css/dashicons.min4189.css' type='text/css'
+            />
+    <link href='css/style.css'
+          rel='stylesheet'  type='text/css'/>
+    <script type='application/javascript' src='js/jquery4a80.js'></script>
+    <script type="application/javascript" src="js/angular.min.js"></script>
+<script type="application/javascript">
+    var revo = angular.module("revo", []);
+    revo.controller("about",function($scope){
+        $scope.location=document.location.host;
+    })
+
+</script>
+</head>
+
+<body class="home blog" ng-controller="about">
+<div id="page" class="hfeed site">
+
+    <div align="right" id="top-header">
+        <a href="">About Me</a>
+    </div>
+
+    <header id="masthead" class="site-header">
+        <div class="header-item">
+            <div class="site-branding">
+                <div class="site-logo">
+                    <a href="index.html">
+                        <img class="logo" src="images/logo2.png"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav id="primary-navigation" class="main-navigation">
+        <div class="navigation-item">
+            <ul id="menu-primary-items" class="menu-primary-items sf-menu">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="">More..</a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="">JUnit</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <a href="#primary-navigation" class="mobile-menu">
+        <div class="dashicons dashicons-menu"></div>
+    </a>
+
+    <div id="content" class="site-content" style="width:70%">
+
+        <div id="primary" class="content-area">
+            <main id="main" class="site-main" role="main" >
+                <article id="post-288" class=" page type-page status-publish hentry entry">
+                    <header class="entry-header">
+                        <h1 class="entry-title">About {{location}}</h1> </header>
+                    <div class="entry-content" >
+                        <p>&nbsp;</p>
+                        <p class="image-float"><a href="images/revo.jpeg"><img class="alignnone wp-image-756 size-thumbnail" style="box-shadow: 8px 8px 12px #aaa;" src="images/revo.jpeg" width="150" height="150"></a></p>
+                        <p>&nbsp;</p>
+                        <p>I’m   software engineer.</p>
+                        <p>I created this blog to share my experiments and knowledge by writing sample tutorials on the various Java technologies.</p>
+                        <p>The tutorials focus mainly on Java, Spring, JSF, Struts, Hibernate, Web services, Android and many other emerging technologies.</p>
+                        <p>Happy reading &nbsp;<img src="images/simple-smile.png" alt=":)" class="wp-smiley" style="height: 1em; max-height: 1em;"></p>
+                    </div>
+                </article>
+            </main>
+        </div>
+     </div>
+    <footer id="colophon" class="site-footer">
+        <div class="footer-item">
+
+            <div class="site-info">
+                <a href="">Privacy Policy</a>
+                <br>
+                {{location}}, Copyright © 2015
+            </div>
+        </div>
+    </footer>
+</div>
+<script type='text/javascript' src='js/delivery.min.js'></script>
+</body>
+</html>

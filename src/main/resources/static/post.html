@@ -1,0 +1,131 @@
+<html ng-app="revo">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="images/simple-smile.png" />
+
+    <link rel='stylesheet' href='css/dashicons.min4189.css' type='text/css'
+            />
+    <link href='css/style.css'
+          rel='stylesheet' type='text/css'/>
+    <script type="application/javascript" src='js/jquery4a80.js'></script>
+    <script type="application/javascript" src='js/angular.min.js'></script>
+    <script type="application/javascript" src='js/app/post.js'></script>
+
+</head>
+
+<body class="home blog" ng-controller="partCtrl">
+<div id="page" class="hfeed site">
+
+    <div align="right" id="top-header">
+        <a href="about.html">About Me</a>
+    </div>
+
+    <header id="masthead" class="site-header">
+        <div class="header-item">
+            <div class="site-branding">
+                <div class="site-logo">
+                    <a href="index.html" itemprop="url" rel="home">
+                        <img class="logo" src="images/logo2.png"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav id="primary-navigation" class="main-navigation">
+        <div class="navigation-item">
+            <ul id="menu-primary-items" class="menu-primary-items sf-menu">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="">More..</a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="">JUnit</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <a href="#primary-navigation" class="mobile-menu">
+        <div class="dashicons dashicons-menu"></div>
+    </a>
+
+    <div id="content" class="site-content" style="width: 70%">
+        <div id="primary" class="content-area">
+            <main id="main" class="site-main">
+                <nav class="breadcrumb-trail breadcrumbs">
+                    <span class="trail-begin">
+                        <a href="index.html">Home</a>
+                    </span>
+                    <span class="sep">/</span>
+                    <a>{{postinfo.date}}</a>
+                    <span class="sep">/</span>
+                    <span class="trail-end">{{postinfo.title}}</span>
+                </nav>
+                <article class="hentry">
+
+                    <header class="entry-header">
+                        <h1 class="entry-title" itemprop="headline">{{postinfo.title}}</h1>
+
+                        <div class="entry-meta">
+                            <span class="posted-on">
+                                <a href="">
+                                    <time class="entry-date published">{{postinfo.date}}
+                                    </time>
+                                </a>
+                            </span>
+                        </div>
+                    </header>
+
+
+                    <div class="entry-content" itemprop="articleBody">
+                        <p>&nbsp;</p>
+
+                        <p>{{postinfo.description}}</p>
+
+
+                        <n ng-repeat="pr in parts">
+                            <p>&nbsp;</p>
+                            <h4><strong><p>File :<em> {{pr.name}}</em></strong></h4>
+
+
+
+    <pre class="brush: java; title: ; notranslate" style="font-size: .8em">
+    {{pr.content}}
+</pre>
+                        </n>
+
+
+                        <n ng-if="postinfo.title != null"><h3>Download&nbsp;source code</h3>
+
+                            <div class="downtag">
+                                <a href="{{postinfo.url}}">{{postinfo.title}}</a>
+                            </div>
+                            <p>&nbsp;</p>
+                        </n>
+                    </div>
+
+                </article>
+            </main>
+        </div>
+     </div>
+    <footer id="colophon" class="site-footer">
+        <div class="footer-item">
+
+            <div class="site-info">
+                <a href="">Privacy Policy</a>
+                <br>
+                {{location}}, Copyright � 2015
+            </div>
+        </div>
+    </footer>
+</div>
+<script type='text/javascript' src='js/delivery.min.js'></script>
+</body>
+</html>

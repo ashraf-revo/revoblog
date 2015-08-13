@@ -1,0 +1,128 @@
+<html ng-app="revo">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="images/simple-smile.png" />
+
+    <link rel='stylesheet' href='../css/dashicons.min4189.css' type='text/css'
+            />
+    <link href='../css/style.css'
+          rel='stylesheet' type='text/css'/>
+    <script type='application/javascript' src='../js/jquery4a80.js'></script>
+    <script type='application/javascript' src='../js/angular.min.js'></script>
+    <script type='application/javascript' src='app/edit.js'></script>
+    <script type="text/javascript" src="../js/picklist.js"></script>
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/bootstrap-theme.css" rel="stylesheet">
+
+</head>
+
+<body class="home blog" ng-controller="partCtrl">
+<div id="page" class="hfeed site">
+    <header id="masthead" class="site-header">
+        <div class="header-item">
+            <div class="site-branding">
+                <div class="site-logo">
+                    <a href="../index.html" rel="home">
+                        <img class="logo" src="../images/logo2.png"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav id="primary-navigation" class="main-navigation">
+        <div class="navigation-item">
+            <ul id="menu-primary-items" class="menu-primary-items sf-menu">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="create.html">Create</a>
+                </li>
+                <li>
+                    <a href="">More..</a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="">JUnit</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <a href="#primary-navigation" class="mobile-menu">
+        <div class="dashicons dashicons-menu"></div>
+    </a>
+
+    <div id="content" class="site-content" style="width: 100%">
+        <div id="primary" class="content-area">
+            <main id="main" class="site-main" role="main">
+                <form id="postId">
+                    <label>
+                        Url
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </label>
+                    <input type="text" name="url" ng-model="postinfo.url"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="submit" ng-click="clone()" value="Clone The Url"/>
+                    <br/><br/>
+
+                    <label>
+                        Publish
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </label>
+                    <input type="checkbox" name="Publish" ng-model="postinfo.publish"/>
+                    <br/><br/>
+
+                    <label>Description </label>
+                    <textarea name="description" ng-model="postinfo.description"
+                              style="border: 2px solid #765942; border-radius: 10px; height: 60px; width: 300px;"></textarea>
+                    <br/><br/>
+
+                    <div style="width: 400px;margin-top: 25px;margin-bottom: 50px">
+                        <label>File </label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input style="float: right" type="file" name="file" class="custom-file-input"/>
+                        <img style="float: right;margin-top: -30px;display: block; background-repeat: no-repeat;-webkit-border-radius: 99em;  -moz-border-radius: 99em;  border-radius: 99em;  border: 5px solid #eee; box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);" width="120" height="90" ng-src="../images/{{postinfo.postImg}}">
+                    </div>
+                    <br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="submit" value="Update" ng-click="submit()">
+                    <input type="submit" ng-click="delete()" value="Delete"/>
+                </form>
+                <br/>
+
+                <div class="container">
+
+                    <form class="form-horizontal" name="test">
+                        <div class="form-group" ng-controller="picklistCtrl">
+                            <div class="col-md-12">
+                                <picklist name="pktest" size="20" data-pick-model="tselected"
+                                          data-pick-options="v.name for v in toptions"/>
+                            </div>
+                        </div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="submit" ng-click="sublist()">
+                    </form>
+                </div>
+
+
+            </main>
+        </div>
+    </div>
+    <footer id="colophon" class="site-footer">
+        <div class="footer-item">
+
+            <div class="site-info">
+                <a href="">Privacy Policy</a>
+                <br>
+                {{location}}, Copyright © 2015
+            </div>
+        </div>
+    </footer>
+</div>
+<script type='text/javascript' src='../js/delivery.min.js'></script>
+</body>
+</html>

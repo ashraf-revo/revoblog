@@ -1,0 +1,135 @@
+<html ng-app="revo">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="images/simple-smile.png" />
+
+    <link rel='stylesheet' href='css/dashicons.min4189.css' type='text/css'
+         />
+    <link href='css/style.css'
+          rel='stylesheet'  type='text/css'/>
+    <script type='application/javascript' src='js/jquery4a80.js'></script>
+    <script type="application/javascript" src="js/angular.min.js"></script>
+    <script type="application/javascript" src="js/app/index.js"></script>
+
+</head>
+<body class="home blog"  ng-controller="postCtrl">
+<div id="page" class="hfeed site">
+
+    <div align="right" id="top-header">
+        <a href="about.html">About Me</a>
+    </div>
+
+    <header id="masthead" class="site-header">
+        <div class="header-item">
+            <div class="site-branding">
+                <div class="site-logo">
+                    <a href="">
+                        <img class="logo" src="images/logo2.png"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav id="primary-navigation" class="main-navigation">
+        <div class="navigation-item">
+            <ul id="menu-primary-items" class="menu-primary-items sf-menu">
+
+                <li>
+                    <a href="">Home</a>
+                </li>
+                <li>
+                    <a href="">More..</a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="">JUnit</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <a href="#primary-navigation" class="mobile-menu">
+        <div class="dashicons dashicons-menu"></div>
+    </a>
+
+    <div id="content" class="site-content" style="width: 70%">
+        <div id="primary" class="content-area">
+            <main id="main" class="site-main" role="main">
+
+
+
+
+
+
+
+
+                <article ng-repeat="p in post" class="hentry">
+                    <a class="thumb-link" href="post.html?post={{p.id}}">
+                        <img width="314" height="220" ng-src="images/{{p.postImg}}"
+                             class="post-thumbnail wp-post-image"/>
+                    </a>
+                    <header class="entry-header entry-header-index">
+                        <h1 class="entry-title">
+                            <a href="post.html?post={{p.id}}">{{p.title}}</a>
+                        </h1>
+
+                        <div class="entry-meta">
+                            <span class="posted-on">
+                                <a href="post.html?post={{p.id}}">
+                                    <time class="entry-date published" datetime="2015-06-30T22:59:00+00:00">
+                                        {{p.date}}
+                                    </time>
+                                </a>
+                            </span>
+                            <span class="comments-link">
+                                <a href="post.html?post={{p.id}}">
+                                    <span class="dsq-postid">0</span>
+                                </a>
+                                <div class="dashicons dashicons-admin-comments"></div>
+                            </span>
+                        </div>
+                    </header>
+                    <div class="entry-summary" itemprop="description">
+                        <p>{{p.description}}</p>
+                    </div>
+                </article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <nav class="pagination loop-pagination">
+                    <a class="prev page-numbers" href="index.html?page={{pagesNumFirst}}">&larr; Prev </a>
+                    <a ng-repeat="page in pagesNum" class='page-numbers {{(page.currentpage==true)?"current":""}}' href='index.html?page={{page.num}}'>{{page.num}}</a>
+                    <a class="next page-numbers" href="index.html?page={{pagesNumLast}}">Next &rarr;</a>
+                </nav>
+            </main>
+        </div>
+     </div>
+    <footer id="colophon" class="site-footer">
+        <div class="footer-item">
+
+            <div class="site-info">
+                <a href="">Privacy Policy</a>
+                <br>
+               {{location}}, Copyright © 2015
+            </div>
+        </div>
+    </footer>
+</div>
+<script type='text/javascript' src='js/delivery.min.js'></script>
+</body>
+</html>
